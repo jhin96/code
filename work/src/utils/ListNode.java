@@ -1,21 +1,17 @@
 package utils;
 
-/**
- * @author Jhin
- * @create 2022-06-14 19:34
- */
 public class ListNode {
-    public int val;
-    public ListNode next;
+    int val;
+    ListNode next;
 
-    public ListNode() {
+    ListNode() {
     }
 
-    public ListNode(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
