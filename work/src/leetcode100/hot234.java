@@ -70,6 +70,7 @@ public class hot234 {
         ListNode fast = new ListNode(-1);
         ListNode slow = fast;
         fast.next = head;
+        // slow会在中间或者中间偏右那个节点
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
