@@ -20,6 +20,15 @@ public class hot207 {
 
     }
 
+    /**
+     * 本题可约化为： 课程安排图是否是 有向无环图(DAG)。即课程间规定了前置条件，但不能构成任何环路，否则课程前置条件将不成立。
+     * 思路是通过 拓扑排序 判断此课程安排图是否是 有向无环图(DAG) 。 拓扑排序原理： 对 DAG 的顶点进行排序，使得对每一条有向边 (u,v)，均有 u（在排序记录中）比 v 先出现。亦可理解为对某点 v 而言，只有当 v 的所有源点均出现了，v 才能出现。
+     * 通过课程前置条件列表 prerequisites 可以得到课程安排图的 邻接表 adjacency，以降低算法时间复杂度，以下两种方法都会用到邻接表。
+     *
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
         if (numCourses == 0 || prerequisites == null || prerequisites.length < 1) {
             return true;
@@ -50,7 +59,7 @@ public class hot207 {
         while (!queue.isEmpty()) {
             Integer poll = queue.poll();
             numCourses--;
-            // poll出队之后，将所有依赖他的减一
+            // poll出队之后，将poll所有的前置减1
             for (int num : adjacency.get(poll)) {
                 indegrees[num]--;
                 if (indegrees[num] == 0) {
