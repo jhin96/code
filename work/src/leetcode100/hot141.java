@@ -15,6 +15,8 @@ public class hot141 {
 
     /**
      * 快慢指针
+     * 时间复杂度O(n)
+     * 空间复杂度O(1)
      *
      * @param head
      * @return
@@ -23,7 +25,7 @@ public class hot141 {
         if (head == null || head.next == null) {
             return false;
         }
-        ListNode fast = head.next;
+        ListNode fast = head;
         while (fast != null && fast.next != null) {
             head = head.next;
             fast = fast.next.next;
