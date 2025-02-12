@@ -11,7 +11,7 @@ import java.util.List;
  * https://leetcode.cn/problems/linked-list-cycle/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot139 {
+public class hot139_单词拆分 {
     public static void main(String[] args) {
         String s = "catsandog";
         List<String> wordDict = Arrays.asList("cats", "dog", "sand", "and", "cat");

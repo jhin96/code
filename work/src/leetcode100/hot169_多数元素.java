@@ -8,7 +8,7 @@ package leetcode100;
  * https://leetcode.cn/problems/majority-element/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot169 {
+public class hot169_多数元素 {
 
     /**
      * 可以通过hashmap存储 元素-出现次数 关系，但是空间复杂度较高

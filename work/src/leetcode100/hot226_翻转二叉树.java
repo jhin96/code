@@ -8,7 +8,7 @@ import utils.TreeNode;
  *https://leetcode.cn/problems/invert-binary-tree/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot226 {
+public class hot226_翻转二叉树 {
 
     /**
      * 递归翻转

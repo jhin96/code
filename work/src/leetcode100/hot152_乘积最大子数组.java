@@ -7,7 +7,7 @@ package leetcode100;
  * https://leetcode.cn/problems/maximum-product-subarray/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot152 {
+public class hot152_乘积最大子数组 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{-2, 3, -4};

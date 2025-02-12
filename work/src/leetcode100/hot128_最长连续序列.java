@@ -10,7 +10,7 @@ import java.util.HashSet;
  * https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot128 {
+public class hot128_最长连续序列 {
 
     /**
      * 用hash表存储已经有的元素，然后一个个遍历

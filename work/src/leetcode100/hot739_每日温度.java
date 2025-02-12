@@ -11,7 +11,7 @@ import java.util.Stack;
  * https://leetcode.cn/problems/daily-temperatures/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot739 {
+public class hot739_每日温度 {
 
     public static void main(String[] args) {
         int[] data = new int[]{73,74,75,71,69,72,76,73};

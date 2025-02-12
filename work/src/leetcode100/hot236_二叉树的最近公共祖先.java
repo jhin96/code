@@ -9,7 +9,7 @@ import utils.TreeNode;
  * https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot236 {
+public class hot236_二叉树的最近公共祖先 {
 
     /**
      * 只要求出2条路径，再求出2条路径上从根节点开始的最后一个重叠节点即可

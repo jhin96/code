@@ -12,7 +12,7 @@ import utils.ListNode;
  * https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot142 {
+public class hot142_环形链表II {
 
     /**
      * 快慢指针找到入口，找到相遇节点后，头节点与相遇节点再次相遇就是入口

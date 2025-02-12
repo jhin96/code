@@ -8,7 +8,7 @@ package leetcode100;
  * https://leetcode.cn/problems/product-of-array-except-self/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot238 {
+public class hot238_除自身以外数组的乘积 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5};

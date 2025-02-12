@@ -8,7 +8,7 @@ package leetcode100;
  * https://leetcode.cn/problems/single-number/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot136 {
+public class hot136_只出现一次的数字 {
 
     /**
      * 异或运算

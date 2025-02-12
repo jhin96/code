@@ -6,7 +6,7 @@ package leetcode100;
  * https://leetcode.cn/problems/maximal-square/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot221 {
+public class hot221_最大正方形 {
 
     public static void main(String[] args) {
         char[][] matrix = new char[1][1];

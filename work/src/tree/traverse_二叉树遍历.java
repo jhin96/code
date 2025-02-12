@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class traverse {
+public class traverse_二叉树遍历 {
 
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);

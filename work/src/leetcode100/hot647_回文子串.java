@@ -9,7 +9,7 @@ package leetcode100;
  * https://leetcode.cn/problems/palindromic-substrings/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot647 {
+public class hot647_回文子串 {
 
     /**
      * 动态规划，dp[i][j]表示i,j是不是一个回文子串(其实就是暴力遍历法，用dp[i+1][j-1]记录了上一步的状态)

@@ -1,15 +1,6 @@
 package sort;
 
-public class QuickSort {
-
-    public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
-        int[] nums = new int[]{2, 4, 1, 0, 3, 5};
-        quickSort.quickSort(nums);
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-    }
+public class QuickSort_快速排序 {
 
     public void quickSort(int[] nums) {
         helper(nums, 0, nums.length - 1);

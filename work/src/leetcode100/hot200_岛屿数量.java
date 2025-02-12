@@ -8,7 +8,7 @@ package leetcode100;
  * https://leetcode.cn/problems/number-of-islands/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot200 {
+public class hot200_岛屿数量 {
 
     /**
      * 解法就是深度优先搜索

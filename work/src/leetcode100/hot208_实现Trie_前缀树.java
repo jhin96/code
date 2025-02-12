@@ -11,12 +11,12 @@ package leetcode100;
  * https://leetcode.cn/problems/implement-trie-prefix-tree/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot208 {
+public class hot208_实现Trie_前缀树 {
 
     /**
      * 字典树，通过26子树（数组与指针）的形式查询
      */
-    public hot208[] child;
+    public hot208_实现Trie_前缀树[] child;
 
     /**
      * 表示是不是单词的结尾
@@ -27,8 +27,8 @@ public class hot208 {
      * 26代表child最多个数
      *
      */
-    public hot208() {
-        this.child = new hot208[26];
+    public hot208_实现Trie_前缀树() {
+        this.child = new hot208_实现Trie_前缀树[26];
         this.end = false;
     }
 
@@ -42,11 +42,11 @@ public class hot208 {
         if (word == null || word.isEmpty()) {
             return;
         }
-        hot208 node = this;
+        hot208_实现Trie_前缀树 node = this;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if (node.child[c - 'a'] == null) {
-                node.child[c - 'a'] = new hot208();
+                node.child[c - 'a'] = new hot208_实现Trie_前缀树();
             }
             node = node.child[c - 'a'];
         }
@@ -66,8 +66,8 @@ public class hot208 {
      *
      * @return
      */
-    public hot208 searchIndex(String word) {
-        hot208 node = this;
+    public hot208_实现Trie_前缀树 searchIndex(String word) {
+        hot208_实现Trie_前缀树 node = this;
         if (word == null || word.isEmpty()) {
             return node;
         }

@@ -12,7 +12,7 @@ import java.util.List;
  * https://leetcode.cn/problems/intersection-of-two-linked-lists/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot160 {
+public class hot160_相交链表 {
 
     public static void main(String[] args) {
         ListNode listNode1 = ListNodeBuilder.build(new int[]{3, 2, 1});

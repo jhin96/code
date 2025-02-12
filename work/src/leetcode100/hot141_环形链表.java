@@ -11,7 +11,7 @@ import utils.ListNode;
  * https://leetcode.cn/problems/linked-list-cycle/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot141 {
+public class hot141_环形链表 {
 
     /**
      * 快慢指针

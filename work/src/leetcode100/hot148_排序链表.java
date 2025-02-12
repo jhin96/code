@@ -8,7 +8,7 @@ import utils.ListNode;
  * https://leetcode.cn/problems/sort-list/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot148 {
+public class hot148_排序链表 {
 
     /**
      * 归并排序，先拆开，后面一个个节点合并

@@ -16,7 +16,7 @@ import java.util.Map;
  * https://leetcode.cn/problems/lru-cache/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot146 {
+public class hot146_LRU缓存 {
 
     /**
      * 双向链表用于处理LRU缓存
@@ -46,7 +46,7 @@ public class hot146 {
     // 缓存map
     Map<Integer, LinkedNode> LruCache;
 
-    public hot146(int capacity) {
+    public hot146_LRU缓存(int capacity) {
         this.capacity = capacity;
         head = new LinkedNode();
         tail = new LinkedNode();

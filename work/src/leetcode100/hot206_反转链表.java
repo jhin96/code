@@ -7,7 +7,7 @@ import utils.ListNode;
  *
  * https://leetcode.cn/problems/reverse-linked-list/description/?envType=problem-list-v2&envId=2cktkvj
  */
-public class hot206 {
+public class hot206_反转链表 {
 
     /**
      * 时间复杂度：O(n)，遍历一次

@@ -14,18 +14,7 @@ import java.util.Stack;
  * https://leetcode.cn/problems/min-stack/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot155 {
-
-    public static void main(String[] args) {
-        hot155 hot155 = new hot155();
-        hot155.push(-2);
-        hot155.push(0);
-        hot155.push(-3);
-        System.out.println(hot155.getMin());
-        hot155.pop();
-        System.out.println(hot155.top());
-        System.out.println(hot155.getMin());
-    }
+public class hot155_最小栈 {
 
     /**
      * 思路为用一个辅助栈存储当前当前栈的最小值
@@ -37,7 +26,7 @@ public class hot155 {
     // 最小栈
     Stack<Integer> minStack;
 
-    public hot155() {
+    public hot155_最小栈() {
         commonStack = new Stack<>();
         minStack = new Stack<>();
         // 为了避免第一个进栈元素没有比较的，初始化minStack(辅助栈永远比正常栈多一个元素)

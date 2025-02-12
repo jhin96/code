@@ -11,7 +11,7 @@ import java.util.Stack;
  * https://leetcode.cn/problems/palindrome-linked-list/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot234 {
+public class hot234_回文链表 {
 
     public static void main(String[] args) {
         ListNode build = ListNodeBuilder.build(1, 2, 3, 3, 2, 1);

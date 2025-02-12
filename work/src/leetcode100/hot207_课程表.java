@@ -14,7 +14,7 @@ import java.util.Queue;
  * https://leetcode.cn/problems/course-schedule/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot207 {
+public class hot207_课程表 {
 
     public static void main(String[] args) {
 

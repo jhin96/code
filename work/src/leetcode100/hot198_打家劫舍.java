@@ -7,7 +7,7 @@ package leetcode100;
  * https://leetcode.cn/problems/house-robber/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
-public class hot198 {
+public class hot198_打家劫舍 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{2,7,9,3,1};
