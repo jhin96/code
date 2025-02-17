@@ -20,14 +20,14 @@ public class huisu_n皇后 {
         if (n < 1) {
             return new ArrayList<>();
         }
-        dfs(0, new boolean[n], new HashSet<>(), new HashSet<>(), new boolean[n][n]);
+        dfs(0, new HashSet<>(), new HashSet<>(), new HashSet<>(), new boolean[n][n]);
         return res;
     }
 
     /**
-     * 行、列、斜对角不能有皇后，需要用3个boolean数组表示
+     * 行、列、斜对角不能有皇后，可以用3个set表示
      * 行的话将皇后放到该行，该行其他位置就不能有皇后了，不需要额外数组
-     * 列用col[]表示第i列是否有皇后，false代表没有
+     * 列用col存储存在皇后的列数
      * 从左往右的对角线性质为j - i不变，可用set保存
      * 从左往右的对角线性质为i + j不变，可用set保存
      *
@@ -37,13 +37,13 @@ public class huisu_n皇后 {
      * @param rightDiag
      *
      */
-    public void dfs(int index, boolean[] col, HashSet<Integer> leftDiag, HashSet<Integer> rightDiag, boolean[][] data) {
+    public void dfs(int index, HashSet<Integer> col, HashSet<Integer> leftDiag, HashSet<Integer> rightDiag, boolean[][] data) {
         // 结束条件，已经到了最后一行的下一行（最后一行已经放了皇后才会到这一行）
-        if (index == col.length) {
+        if (index == data.length) {
             List<String> ans = new ArrayList<>();
-            for (int i = 0; i < col.length; i++) {
+            for (int i = 0; i < data.length; i++) {
                 StringBuilder builder = new StringBuilder();
-                for (int j = 0; j < col.length; j++) {
+                for (int j = 0; j < data.length; j++) {
                     builder.append(data[i][j] ? "Q" : ".");
                 }
                 ans.add(builder.toString());
@@ -53,18 +53,18 @@ public class huisu_n皇后 {
         }
 
         // 遍历每一列
-        for (int j = 0; j < col.length; j++) {
+        for (int j = 0; j < data.length; j++) {
             // 剪枝，列或者对角有皇后了
-            if (col[j] || leftDiag.contains(j - index) || rightDiag.contains(index + j)) {
+            if (col.contains(j) || leftDiag.contains(j - index) || rightDiag.contains(index + j)) {
                 continue;
             }
-            col[j] = true;
+            col.add(j);
             leftDiag.add(j - index);
             rightDiag.add(index + j);
             data[index][j] = true;
             dfs(index + 1, col, leftDiag, rightDiag, data);
             // 还原状态
-            col[j] = false;
+            col.remove(j);
             leftDiag.remove(j - index);
             rightDiag.remove(index + j);
             data[index][j] = false;
