@@ -1,7 +1,5 @@
 package leetcode100;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,13 +13,6 @@ import java.util.List;
  *
  */
 public class hot322_零钱兑换 {
-
-    @Test
-    public void test() {
-        int[] coins = new int[]{1, 2, 5};
-        int i = coinChange(coins, 100);
-        System.out.println(i);;
-    }
 
     /**
      * 动态规划
