@@ -38,7 +38,7 @@ public class huisu_n皇后 {
      *
      */
     public void dfs(int index, boolean[] col, HashSet<Integer> leftDiag, HashSet<Integer> rightDiag, boolean[][] data) {
-        // 结束条件，已经到了最后一行的下一行
+        // 结束条件，已经到了最后一行的下一行（最后一行已经放了皇后才会到这一行）
         if (index == col.length) {
             List<String> ans = new ArrayList<>();
             for (int i = 0; i < col.length; i++) {
