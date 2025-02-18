@@ -50,6 +50,8 @@ public class hot322_零钱兑换 {
     /**
      * 每次都从最大往最小取
      * 这样的问题在于，第一个返回的结果肯定是最小的，其实后面就不用继续了，所以这个会超时
+     * 这里不一定是最小的，145凑8的话，这种会取到5111，答案是44，所以不需要排序了
+     *
      * 优化，每次从index开始遍历（头一轮选择了i,i+1，这一轮就不需要i+1,i），但是依然超时
      *
      * @param coins
@@ -60,7 +62,8 @@ public class hot322_零钱兑换 {
         if (coins == null || coins.length < 1) {
             return -1;
         }
-        sort(coins);
+        //
+//        sort(coins);
         dfs(coins, amount, 0, new ArrayList<>());
         return min == Integer.MAX_VALUE ? -1 : min;
     }
