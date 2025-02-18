@@ -15,6 +15,38 @@ import java.util.List;
 public class hot322_零钱兑换 {
 
     /**
+     * 二维dp更好理解
+     *
+     * @param coins
+     * @param amount
+     * @return
+     */
+    public int coinChange(int[] coins, int amount) {
+        if (coins == null || coins.length < 1) {
+            return -1;
+        }
+        // dp[i][j]表示前i个硬币拼出j元需要的最少硬币数
+        int[][] dp = new int[coins.length + 1][amount + 1];
+        // 初始化，不能初始化为-1，会导致后续计算出问题
+        for (int i = 1; i <= amount; i++) {
+            dp[0][i] = amount + 1;
+        }
+
+        for (int i = 1; i <= coins.length; i++) {
+            for (int j = 1; j <= amount; j++) {
+                if (coins[i - 1] > j) {
+                    // 这枚硬币用不了
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    // 可以用，则需要考虑来两种情况
+                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - coins[i - 1]] + 1);
+                }
+            }
+        }
+        return dp[coins.length][amount] > amount ? -1 : dp[coins.length][amount];
+    }
+
+    /**
      * 动态规划
      * dp[i]表示组成金额i所需要的最少硬币数量
      * 状态转移方程为dp[i] = min(dp[i - j]) + 1；j为所有硬币的大小（每轮都需要全部遍历）
@@ -25,7 +57,7 @@ public class hot322_零钱兑换 {
      * @param amount
      * @return
      */
-    public int coinChange(int[] coins, int amount) {
+    public int method2(int[] coins, int amount) {
         if (coins == null || coins.length < 1) {
             return -1;
         }
