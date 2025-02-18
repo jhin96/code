@@ -39,6 +39,7 @@ public class hot322_零钱兑换 {
                     dp[i][j] = dp[i - 1][j];
                 } else {
                     // 可以用，则需要考虑来两种情况
+                    // 这里后面不是常规的dp[i - 1]，因为写成i - 1是不用这个硬币凑j - coins[i - 1]，但是硬币可以重复用，i - 1在i之前就算了，就直接求i的最小值了
                     dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - coins[i - 1]] + 1);
                 }
             }
