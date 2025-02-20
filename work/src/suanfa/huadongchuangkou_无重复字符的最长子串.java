@@ -3,7 +3,7 @@ package suanfa;
 import java.util.HashMap;
 import java.util.Map;
 
-public class suanfa_无重复字符的最长子串 {
+public class huadongchuangkou_无重复字符的最长子串 {
 
     /**
      * 优化，可以不用删元素
