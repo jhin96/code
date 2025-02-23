@@ -2,6 +2,9 @@ package leetcode100;
 
 import utils.TreeNode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
  * 路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
@@ -28,10 +31,10 @@ public class hot437_路径总和III {
         System.out.println(i);
     }
 
+    public int res = 0;
+
     /**
-     * 总的求和方法，相当于只求以root为根节点的结果，但是每一个节点都能当成根节点计算pathSum
-     * 时间复杂度：O(n方)对每个节点的时间复杂度是n，然后n个节点都能做根节点
-     * 空间复杂度：O(n)栈的深度（每个递归调用都是独立的，空间复杂度是由最深的递归调用链决定的）
+     * 采用前缀和
      *
      * @param root
      * @param targetSum
@@ -41,11 +44,54 @@ public class hot437_路径总和III {
         if (root == null) {
             return 0;
         }
+        Map<Integer, Integer> map = new HashMap<>();
+        // 不添加这个1,2,3找6这种会输出0
+        map.put(0, 1);
+        helper(root, 0, targetSum, map);
+        return res;
+    }
+
+    /**
+     * 深度优先遍历
+     *
+     * @param root
+     * @param cur
+     * @param target
+     * @param map
+     */
+    public void helper(TreeNode root, Integer cur, int target, Map<Integer, Integer> map) {
+        if (root == null) {
+            return;
+        }
+        cur += root.val;
+        if (map.containsKey(cur - target)) {
+            res += map.get(cur - target);
+        }
+        map.put(cur, map.getOrDefault(cur, 0) + 1);
+        helper(root.left, cur, target, map);
+        helper(root.right, cur, target, map);
+        // 类似回溯的思想，回上个节点时删除这个节点
+        map.put(cur, map.get(cur) - 1);
+    }
+
+    /**
+     * 总的求和方法，相当于只求以root为根节点的结果，但是每一个节点都能当成根节点计算pathSum
+     * 时间复杂度：O(n方)对每个节点的时间复杂度是n，然后n个节点都能做根节点
+     * 空间复杂度：O(n)栈的深度（每个递归调用都是独立的，空间复杂度是由最深的递归调用链决定的）
+     *
+     * @param root
+     * @param targetSum
+     * @return
+     */
+    public int method1(TreeNode root, int targetSum) {
+        if (root == null) {
+            return 0;
+        }
         // 以当前节点为根的解法
         int rootNum = dfs(root, targetSum, 0);
         // 以左、右子树为根的解法（路径可以从任一节点开始）
-        int leftNum = pathSum(root.left, targetSum);
-        int rightNum = pathSum(root.right, targetSum);
+        int leftNum = method1(root.left, targetSum);
+        int rightNum = method1(root.right, targetSum);
         return rootNum + leftNum + rightNum;
     }
 
