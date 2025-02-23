@@ -50,4 +50,33 @@ public class qianzuihe_和为K的子数组 {
         return count;
     }
 
+    /**
+     * 两次便利写法
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int method1(int[] nums, int k) {
+        if (nums == null || nums.length < 1) {
+            return 0;
+        }
+        int res = 0;
+        int[] pre = new int[nums.length];
+        pre[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            pre[i] = pre[i - 1] + nums[i];
+        }
+        // 存储前缀和与个数
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+        for (int i = 0; i < pre.length; i++) {
+            if (map.containsKey(pre[i] - k)) {
+                res += map.get(pre[i] - k);
+            }
+            map.put(pre[i], map.getOrDefault(pre[i], 0) + 1);
+        }
+        return res;
+    }
+
 }
