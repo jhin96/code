@@ -70,7 +70,7 @@ public class hot437_路径总和III {
         map.put(cur, map.getOrDefault(cur, 0) + 1);
         helper(root.left, cur, target, map);
         helper(root.right, cur, target, map);
-        // 类似回溯的思想，回上个节点时删除这个节点
+        // 类似回溯的思想，回上个节点时删除这个节点(相当于每条路径维护自己的cur和map)
         map.put(cur, map.get(cur) - 1);
     }
 
