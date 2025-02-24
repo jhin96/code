@@ -51,7 +51,7 @@ public class qianzuihe_和为K的子数组 {
     }
 
     /**
-     * 两次便利写法
+     * 两次遍历写法
      *
      * @param nums
      * @param k
