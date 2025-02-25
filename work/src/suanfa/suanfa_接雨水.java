@@ -19,17 +19,19 @@ public class suanfa_接雨水 {
             return 0;
         }
         int res = 0;
-        // 不需要初始化两端，因为接不到
+        // 其实可以不用初始化两端，因为接不到，算最小值-height也是0
         int[] maxLeft = new int[height.length];
+        maxLeft[0] = height[0];
         int[] maxRight = new int[height.length];
+        maxRight[height.length - 1] = height[height.length - 1];
         for (int i = 1; i < height.length; i++) {
-            maxLeft[i] = Math.max(maxLeft[i - 1], height[i - 1]);
+            maxLeft[i] = Math.max(maxLeft[i - 1], height[i]);
         }
         for (int j = height.length - 2; j >= 0; j--) {
-            maxRight[j] = Math.max(maxRight[j + 1], height[j + 1]);
+            maxRight[j] = Math.max(maxRight[j + 1], height[j]);
         }
 
-        for (int k = 1; k < height.length - 1; k++) {
+        for (int k = 0; k < height.length; k++) {
             int tmpHeight = Math.min(maxLeft[k], maxRight[k]) - height[k];
             if (tmpHeight > 0) {
                 res += tmpHeight;
