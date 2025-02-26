@@ -43,21 +43,20 @@ public class hot406_根据身高重建队列 {
             int value = person[1];
             // 从左往右找到>=height的第value + 1个位置放下，该位置必须为空位
             int j = 0;
-            int cur = 0;
             while (j < people.length) {
-                if (cur == value && !visit[j]) {
+                if (value == 0 && !visit[j]) {
                     break;
                 }
                 // 没有被占位置或者当前位置元素高于height；相当于留了一个空位，value--
                 if (!visit[j] || res[j][0] >= height) {
                     j++;
-                    cur++;
+                    value--;
                 } else {
                     j++;
                 }
             }
             res[j][0] = height;
-            res[j][1] = value;
+            res[j][1] = person[1];
             visit[j] = true;
         }
         return res;
