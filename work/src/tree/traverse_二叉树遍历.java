@@ -2,9 +2,7 @@ package tree;
 
 import utils.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class traverse_二叉树遍历 {
 
@@ -38,6 +36,35 @@ public class traverse_二叉树遍历 {
         System.out.println("后序遍历：");
         postOrder(node1);
         System.out.println();
+    }
+
+    /**
+     * 层序遍历并按层打印
+     *
+     * @param root
+     */
+    private static void levelOrderPrint(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode poll = queue.poll();
+                if (poll.left != null) {
+                    queue.add(poll.left);
+                }
+                if (poll.right != null) {
+                    queue.add(poll.right);
+                }
+                level.add(poll.val);
+            }
+            list.add(level);
+        }
+        for (List<Integer> level : list) {
+            System.out.println(level);
+        }
     }
 
     /**
