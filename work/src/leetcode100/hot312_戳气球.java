@@ -31,6 +31,13 @@ public class hot312_戳气球 {
             return 0;
         }
         int n = nums.length;
+        // 初始化虚拟气球
+        int[] newNum = new int[n + 2];
+        newNum[0] = 1;
+        newNum[n + 1] = 1;
+        for (int i = 1; i <= n; i++) {
+            newNum[i] = nums[i - 1];
+        }
         // 因为不包含i、j，所以初始化需要+2
         int[][] dp = new int[n + 2][n + 2];
         for (int i = n + 1; i >= 0; i--) {
@@ -39,12 +46,12 @@ public class hot312_戳气球 {
                     // dp[i][i + 1] = 0
                     continue;
                 }
-                // 这里i和j不用做+1或-1运算
-                int left = i >= n ? 1 : nums[i];
-                int right = j >= n ? 1 : nums[j];
+
+                int left = newNum[i];
+                int right = newNum[j];
                 // 遍历k
                 for (int k = i + 1; k < j; k++) {
-                    int numK = k >= n ? 1 : nums[k];
+                    int numK = newNum[k];
                     dp[i][j] = Math.max(dp[i][j] , dp[i][k] + dp[k][j] + left * right * numK);
                 }
             }
