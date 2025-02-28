@@ -72,6 +72,7 @@ public class hot301_删除无效的括号 {
             if (removeLeft > 0 && s.charAt(i) == '(') {
                 // 只是将i处的字符删掉
                 // 这里是i而不是i + 1，因为删了一个元素，后面的元素往前移了（会一直删第一个元素，直到进入了第二个for循环）
+                // 并且不需要像一般回溯一样还原状态，因为使用subString拼接的
                 dfs(s.substring(0, i) + s.substring(i + 1), i, removeLeft - 1, removeRight, res);
             }
             // 删除这个右括号
