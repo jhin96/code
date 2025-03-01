@@ -21,13 +21,41 @@ public class hot448_找到所有数组中消失的数字 {
     }
 
     /**
+     * 遍历数组，将num - 1的地方加上n，最后发现没有被加的地方就是没有的数
+     * 因为数字不能大于n，所以能这么做
+     *
+     * @param nums
+     * @return
+     */
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        if (nums == null || nums.length < 1) {
+            return new ArrayList<>();
+        }
+        int n = nums.length;
+        for (int num : nums) {
+            // 可能已经被加过了，所以不能用num - 1做索引
+            int x = (num - 1) % n;
+            if (nums[x] <= n) {
+                nums[x] += n;
+            }
+        }
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] <= n) {
+                res.add(i + 1);
+            }
+        }
+        return res;
+    }
+
+    /**
      * 借助一个辅助数组吧
      * 空间、时间复杂度O(n)
      *
      * @param nums
      * @return
      */
-    public List<Integer> findDisappearedNumbers(int[] nums) {
+    public List<Integer> method2(int[] nums) {
         if (nums == null || nums.length < 1) {
             return new ArrayList<>();
         }
@@ -62,8 +90,8 @@ public class hot448_找到所有数组中消失的数字 {
             return new ArrayList<>();
         }
         for (int i = 0; i < nums.length; i++) {
-            while (nums[i] <= nums.length && nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) {
-                // 将nums[i]防止到nums[nums[i] - 1]
+            while (nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) {
+                // 将nums[i]放置到nums[nums[i] - 1]
                 int tmpA = nums[i];
                 int tmpB = nums[nums[i] - 1];
                 // 此时nums[i]变了，不能这么写
