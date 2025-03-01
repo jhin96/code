@@ -6,7 +6,7 @@ package leetcode100;
  * 假设 nums 只有 一个重复的整数 ，返回 这个重复的数 。
  * 你设计的解决方案必须 不修改 数组 nums 且只用常量级 O(1) 的额外空间。
  *
- * https://leetcode.cn/problems/hamming-distance/description/?envType=problem-list-v2&envId=2cktkvj
+ * https://leetcode.cn/problems/find-the-duplicate-number/description/?envType=problem-list-v2&envId=2cktkvj
  *
  */
 public class hot287_寻找重复数 {
