@@ -61,7 +61,7 @@ public class hot42_接雨水 {
         // 存储下标
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < height.length; i++) {
-            // 破坏单调递减条件
+            // 破坏单调递减条件，相当于一条条的算水量
             while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
                 // 已经不满足单调减了，一定要取出当前元素；最少需要3个柱子才能算
                 Integer pop = height[stack.pop()];
