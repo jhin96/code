@@ -24,9 +24,9 @@ public class hot647_回文子串 {
         }
         int res = 0;
         boolean[][] dp = new boolean[s.length()][s.length()];
-        // 不能i,j都从0开始遍历，那样之前状态会没初始化
+        // j必须从大往小便利，i都行
         for (int j = 0; j < s.length(); j++) {
-            for (int i = 0; i <= j; i++) {
+            for (int i = j; i >= 0; i--) {
                 // 长度为1时i = j就是回文，长度超过1则需要看i+1,j-1
                 dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 2 || dp[i + 1][j - 1]);
                 if (dp[i][j]) {
