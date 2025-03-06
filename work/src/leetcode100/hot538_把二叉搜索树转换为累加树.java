@@ -47,4 +47,24 @@ public class hot538_把二叉搜索树转换为累加树 {
         dfs(root.left);
     }
 
+
+    public TreeNode method1(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        dfs(root, 0);
+        return root;
+    }
+
+    public int dfs(TreeNode root, int val) {
+        if (root == null) {
+            // 返回0会导致之前的结果没有
+            return val;
+        }
+        int right = dfs(root.right, val);
+        root.val += right;
+        // 直接将left返回，因为left > val
+        return dfs(root.left, root.val);
+    }
+
 }
