@@ -31,6 +31,8 @@ public class hot31_下一个排列 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      *
+     * 还可以理解为找到i,i+1之后，i+1到结尾肯定降序，翻转这部分，然后将i尽可能往前插，翻转后从i开始找第一个比i大的，交换
+     *
      * @param nums
      */
     public void nextPermutation(int[] nums) {
