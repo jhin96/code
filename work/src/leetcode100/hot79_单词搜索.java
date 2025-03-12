@@ -46,7 +46,17 @@ public class hot79_单词搜索 {
         return false;
     }
 
-
+    /**
+     * 当前位置开始，能否搜索到word
+     *
+     * @param board
+     * @param word
+     * @param index
+     * @param i
+     * @param j
+     * @param visit
+     * @return
+     */
     public boolean dfs (char[][] board, String word, int index, int i, int j, boolean[][] visit) {
         if (index == word.length()) {
             return true;
