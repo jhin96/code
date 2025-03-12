@@ -40,7 +40,6 @@ public class hot114_二叉树展开为链表 {
             return;
         }
         dfs(root);
-        System.out.println();
     }
 
     public TreeNode dfs (TreeNode root) {
