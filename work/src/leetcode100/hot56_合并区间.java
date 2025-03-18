@@ -15,6 +15,7 @@ import java.util.List;
 public class hot56_合并区间 {
 
     /**
+     * 按照第一个元素进行排序，将数组放到辅助list中，然后一个往里添加，维护left与right
      * 时间复杂度：O(nlogn)，排序时间为nlogn
      * 空间复杂度：O(n)，排序的栈为logn，到那时辅助list为n
      *
