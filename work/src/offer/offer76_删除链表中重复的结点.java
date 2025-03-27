@@ -1,7 +1,6 @@
 package offer;
 
 import utils.ListNode;
-import utils.ListNodeBuilder;
 
 import java.util.ArrayList;
 import java.util.HashSet;
