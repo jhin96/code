@@ -16,7 +16,7 @@ public class newhot239_滑动窗口最大值 {
         // 维护一个双端队列，要求元素递减
         Deque<Integer> queue = new LinkedList<>();
 
-        // 初始化滑动窗口
+        // 初始化滑动窗口，这里注意右端点在0处
         for (int i = 1 - k, j = 0; j < nums.length; i++, j++) {
             // 判断删除的元素是不是最大元素
             if (i > 0 && !queue.isEmpty() && nums[i - 1] == queue.getFirst()) {
