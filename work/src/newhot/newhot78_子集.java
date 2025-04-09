@@ -18,6 +18,7 @@ public class newhot78_子集 {
         res.add(new ArrayList<>(tmp));
         for (int i = index; i < nums.length; i++) {
             tmp.add(nums[i]);
+            // 这里是i+1，有的地方是index+1
             dfs(nums, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
