@@ -136,23 +136,23 @@ public class traverse_二叉树遍历 {
      * @return
      */
     private static void postOrder(TreeNode root) {
-        // 用于记录上一个遍历过的节点
-        TreeNode tmp = null;
         Stack<TreeNode> stack = new Stack<>();
+        // 记录上一个遍历的节点
+        TreeNode tmp = null;
         while (!stack.isEmpty() || root != null) {
-            // 左子树全部入栈
-            while (root != null) {
+            if (root != null) {
                 stack.push(root);
                 root = root.left;
-            }
-            TreeNode node = stack.peek();
-            // 右节点为空或右节点刚刚遍历过，则可遍历这个节点
-            if (node.right == null || node.right == tmp) {
-                System.out.print(node.val + " ");
-                tmp = node;
-                stack.pop();
             } else {
-                root = node.right;
+                TreeNode node = stack.peek();
+                // 右子树为空 or 右节点访问过，遍历该节点
+                if (node.right == null || node.right == tmp) {
+                    System.out.print(node.val + " ");
+                    tmp = node;
+                    stack.pop();
+                } else {
+                    root = node.right;
+                }
             }
         }
     }
