@@ -1,4 +1,4 @@
-package sort;
+package suanfa;
 
 public class QuickSort_快速排序 {
 
